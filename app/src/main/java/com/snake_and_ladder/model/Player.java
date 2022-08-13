@@ -16,4 +16,9 @@ public class Player {
     public int getPosition() {
         return position;
     }
+
+    public void move() {
+        int newPosition = Dice.rollDice() + position;
+        position = Board.getCellPosition(newPosition);
+    }
 }
