@@ -1,7 +1,7 @@
 package com.snake_and_ladder.model;
 
 public class Board {
-    private Cell[] cells;
+    private final Cell[] cells;
     private final int size;
 
     public Board(int size) {

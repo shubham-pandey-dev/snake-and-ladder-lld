@@ -13,12 +13,6 @@ public class Cell {
         this.ladder = null;
     }
 
-    public Cell(int number, Cell snake, Cell ladder) {
-        this.number = number;
-        this.snake = snake;
-        this.ladder = ladder;
-    }
-
     public void setSnake(Cell snake) {
         this.snake = snake;
     }

@@ -28,7 +28,6 @@ public class Game {
     }
 
     private void startGame() {
-        int noOfPlayers = players.size();
         int turnOfPlayer = 0;
         Player currentPlayer;
         while (players.size() > 1) {

@@ -1,6 +1,5 @@
 package com.snake_and_ladder.model;
 
-import static com.snake_and_ladder.OutputWriter.print;
 import static com.snake_and_ladder.OutputWriter.printWithNewLine;
 
 public class Player {
