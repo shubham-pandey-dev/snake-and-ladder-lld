@@ -24,6 +24,7 @@ public class Game {
         initializeLadders();
         initializePlayers();
         startGame();
+        printWithNewLine("######## Game Over ########");
     }
 
     private void startGame() {

@@ -18,14 +18,14 @@ public class Player {
         int dice = Dice.rollDice();
         int newPosition = dice + position;
         if (newPosition <= board.getSize()) {
-            print(name + " rolled a " + dice + " and moved from " + position + " to ");
+            printWithNewLine(name + " rolled a " + dice + " and moved from " + position + " to " + (newPosition));
             position = board.getCellPosition(newPosition);
-            printWithNewLine(position);
+            printWithNewLine(name + " is at position " + position);
             if (position == board.getSize()) {
                 printWithNewLine("************ " + name + " has just won the game ***********");
             }
         } else {
-            print(name + " rolled a " + dice + " but cannot move outside board");
+            printWithNewLine(name + " rolled a " + dice + " but cannot move outside board");
         }
     }
 
