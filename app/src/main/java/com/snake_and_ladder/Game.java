@@ -1,7 +1,10 @@
 package com.snake_and_ladder;
 
 import com.snake_and_ladder.model.Board;
+import com.snake_and_ladder.model.Player;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static com.snake_and_ladder.OutputWriter.print;
@@ -10,6 +13,7 @@ import static com.snake_and_ladder.OutputWriter.printWithNewLine;
 public class Game {
     private Board board;
     private Scanner scanner;
+    private List<Player> players;
 
     public void startSnakeAndLadder() {
         scanner = new Scanner(System.in);
@@ -18,6 +22,7 @@ public class Game {
         initializeBoard();
         initializeSnakes();
         initializeLadders();
+        initializePlayers();
 
     }
 
@@ -44,6 +49,16 @@ public class Game {
             int ladderStartAt = scanner.nextInt();
             int ladderEndAt = scanner.nextInt();
             board.addLadder(ladderStartAt, ladderEndAt);
+        }
+    }
+
+    private void initializePlayers() {
+        print("Enter Number of Players: ");
+        int noOfPlayers = scanner.nextInt();
+        players = new ArrayList<>();
+        for (int player = 1; player <= noOfPlayers; player += 1) {
+            String name = scanner.next();
+            players.add(new Player(name));
         }
     }
 }
