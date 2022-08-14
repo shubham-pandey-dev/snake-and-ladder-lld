@@ -23,7 +23,23 @@ public class Game {
         initializeSnakes();
         initializeLadders();
         initializePlayers();
+        startGame();
+    }
 
+    private void startGame() {
+        int noOfPlayers = players.size();
+        int turnOfPlayer = 0;
+        Player currentPlayer;
+        while (players.size() > 1) {
+            currentPlayer = players.get(turnOfPlayer);
+            currentPlayer.move();
+            if (currentPlayer.hasWon()) {
+                players.remove(currentPlayer);
+            } else {
+                ++turnOfPlayer;
+            }
+            turnOfPlayer = turnOfPlayer % players.size();
+        }
     }
 
     private void initializeBoard() {
@@ -58,7 +74,7 @@ public class Game {
         players = new ArrayList<>();
         for (int player = 1; player <= noOfPlayers; player += 1) {
             String name = scanner.next();
-            players.add(new Player(name));
+            players.add(new Player(name, board));
         }
     }
 }
